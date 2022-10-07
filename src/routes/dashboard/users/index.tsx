@@ -1,8 +1,10 @@
 import React from 'react';
 import {useGetUsersQuery} from "features/api/userSlice";
+import { useNavigate } from "react-router-dom"
 
 const Index = () => {
-    const { data: Users, isLoading } = useGetUsersQuery()
+    const { data: Users, isLoading } = useGetUsersQuery();
+    const navigate = useNavigate()
 
     return (
         <div>
@@ -12,6 +14,7 @@ const Index = () => {
                 <div>
                     <h1>{user.userName}</h1>
                     <p>{user.email}</p>
+                    <button onClick={() => navigate(`users/${user.id}`)}>View</button>
                 </div>
             ))}
         </div>

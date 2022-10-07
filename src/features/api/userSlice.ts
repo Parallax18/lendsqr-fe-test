@@ -13,7 +13,7 @@ const userApiSlice = createApi({
         getUsers: builder.query<IUser[], void>({
             query: () => '/users'
         }),
-        getSingleUser: builder.query({
+        getSingleUser: builder.query<IUser, string>({
             query: (id: string) => `/users/${id}`
         })
     })
