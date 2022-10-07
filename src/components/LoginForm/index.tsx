@@ -46,7 +46,7 @@ const Index = () => {
                 <p>FORGOT PASSWORD</p>
             </div>
 
-            <input type="submit">Login</input>
+            <input type="submit" />
         </form>
     );
 }
