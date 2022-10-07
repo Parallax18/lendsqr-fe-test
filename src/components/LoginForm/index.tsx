@@ -31,13 +31,22 @@ const Index = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("email")} type={'email'} placeholder={'Email'} />
-            <p>{errors.email?.message}</p>
+            <div>
+                <div>
+                    <input {...register("email")} type={'email'} placeholder={'Email'} />
+                </div>
+                <p>{errors.email?.message}</p>
 
-            <input {...register("password")} type={'password'} placeholder={'Password'} />
-            <p>{errors.password?.message}</p>
+                <div>
+                <input {...register("password")} type={'password'} placeholder={'Password'} />
+                  <button>show</button>
+                </div>
+                <p>{errors.password?.message}</p>
 
-            <input type="submit" />
+                <p>FORGOT PASSWORD</p>
+            </div>
+
+            <input type="submit">Login</input>
         </form>
     );
 }

@@ -12,6 +12,7 @@ import Login from "routes/login";
 import Dashboard from "routes/dashboard";
 import Users from "routes/dashboard/users";
 import Error404 from "components/Error404";
+import UserDetail from "routes/dashboard/users/user-detail";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: 'users',
                 element: <Users />
+            },
+            {
+                path: 'users/:id',
+                element: <UserDetail />
             }
         ]
     }
