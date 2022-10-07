@@ -1,11 +1,19 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import LoginForm from "components/LoginForm";
 
 const Index = () => {
     return (
         <div>
-            <h1>LOGIN</h1>
-            <Link to={'dashboard'}>Login</Link>
+            {/*Image*/}
+            <div></div>
+            {/*Form*/}
+            <div>
+                <div>
+                    <h1>Welcome</h1>
+                    <p>Enter details to login</p>
+                </div>
+                <LoginForm />
+            </div>
         </div>
     );
 };
