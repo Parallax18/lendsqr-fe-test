@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {IUser} from "../../helpers/models/user";
-// import {EndpointBuilder} from "@reduxjs/toolkit/dist/query/endpointDefinitions";
-// import {BaseQueryArg} from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 
 const userApiSlice = createApi({
     reducerPath: 'userApi',
@@ -18,6 +16,11 @@ const userApiSlice = createApi({
         })
     })
 })
+
+
+
+
+// export const { selectAll: selectAllUsers } = usersAdapter.getSelectors<RootState>((state) => selectUsersData(state) ?? initialState)
 
 export const { useGetUsersQuery, useGetSingleUserQuery } = userApiSlice
 export default userApiSlice

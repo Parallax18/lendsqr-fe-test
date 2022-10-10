@@ -24,7 +24,8 @@
       "features/*": ["features/*"],
       "routes/*": ["routes/*"],
       "app/*": ["app/*"],
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "services/*": ["services/*"]
     },
 
   },

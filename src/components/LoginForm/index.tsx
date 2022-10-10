@@ -2,11 +2,14 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom'
 import * as yup from "yup";
+import {useAppDispatch} from "app/hooks";
+import {authenticateUser} from "features/api/authSlice";
+import {IAppUser} from "../../helpers/models/app-user";
 
-interface IFormInputs {
-    email: string
-    password: number
-}
+// interface IFormInputs {
+//     email: string
+//     password: number
+// }
 
 const schema = yup.object({
     email: yup.string().email('Must be a valid email').required('Please enter your email address'),
@@ -21,11 +24,13 @@ const schema = yup.object({
 
 const Index = () => {
     const navigate = useNavigate()
-    const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
+    const dispatch = useAppDispatch()
+    const { register, handleSubmit, formState: { errors } } = useForm<IAppUser>({
         resolver: yupResolver(schema)
     });
-    const onSubmit = (data: IFormInputs) => {
+    const onSubmit = (data: IAppUser) => {
         console.log(data)
+        dispatch(authenticateUser(data))
         navigate('/dashboard')
     };
 

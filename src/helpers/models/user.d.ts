@@ -47,5 +47,7 @@ export interface IUser {
     accountNumber: string,
     socials: ISocials,
     education: IEducation,
-    id: string
+    id: string,
+    ids?: string,
+    entities?: string
 }
