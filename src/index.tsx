@@ -8,7 +8,7 @@ import {
     createBrowserRouter,
     RouterProvider
 } from "react-router-dom";
-import Login from "routes/login";
+import Login from "routes/login/login";
 import Dashboard from "routes/dashboard";
 import Users from "routes/dashboard/users";
 import Error404 from "components/Error404";

@@ -1,0 +1,43 @@
+.input__group{
+  margin: 2rem 0;
+
+  & > *{
+    margin-bottom: 1.5rem;
+  }
+
+  &--link{
+    color: #39CDCC;
+    font-family: "Avenir Next" sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  &--error-message{
+    color: #ff4141;
+    margin-top: 0;
+  }
+}
+
+.input__wrapper{
+  height: 50px;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+  width: 27.9375rem;
+}
+
+.input__field{
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  font-family: "Avenir", sans-serif;
+  font-size: 0.875rem;
+  color: #545F7D;
+
+  &::placeholder{
+    color: #545F7D;
+  }
+
+
+}

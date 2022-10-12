@@ -5,6 +5,8 @@ import * as yup from "yup";
 import {useAppDispatch} from "app/hooks";
 import {authenticateUser} from "features/api/authSlice";
 import {IAppUser} from "../../helpers/models/app-user";
+import Button from "components/Button/Button";
+import './loginForm.style.scss'
 
 const schema = yup.object({
     email: yup.string().email('Must be a valid email').required('Please enter your email address'),
@@ -17,38 +19,38 @@ const schema = yup.object({
         ),
 }).required();
 
-const Index = () => {
+const LoginForm = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const { register, handleSubmit, formState: { errors } } = useForm<IAppUser>({
         resolver: yupResolver(schema)
     });
     const onSubmit = (data: IAppUser) => {
-        console.log(data)
         dispatch(authenticateUser(data))
         navigate('/dashboard')
     };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <div>
-                    <input {...register("email")} type={'email'} placeholder={'Email'} />
+            <div className={'input__group'}>
+                <div className={'input__wrapper'}>
+                    <input className={'input__field'}  {...register("email")} type={'email'} placeholder={'Email'} />
                 </div>
-                <p>{errors.email?.message}</p>
+                <p className={'input__group--error-message'}>{errors.email?.message}</p>
 
-                <div>
-                <input {...register("password")} type={'password'} placeholder={'Password'} />
-                  <button>show</button>
+                <div className={'input__wrapper'}>
+                    <input className={'input__field'} {...register("password")} type={'password'} placeholder={'Password'} />
+                    <button>show</button>
                 </div>
-                <p>{errors.password?.message}</p>
+                <p className={'input__group--error-message'}>{errors.password?.message}</p>
 
-                <p>FORGOT PASSWORD</p>
+                <a href={'#'} className={'input__group--link'}>FORGOT PASSWORD?</a>
             </div>
+            
+            <Button type={'submit'} text={'LOG IN'} />
 
-            <input type="submit" />
         </form>
     );
 }
 
-export default Index
+export default LoginForm
