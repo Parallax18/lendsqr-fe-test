@@ -6,11 +6,6 @@ import {useAppDispatch} from "app/hooks";
 import {authenticateUser} from "features/api/authSlice";
 import {IAppUser} from "../../helpers/models/app-user";
 
-// interface IFormInputs {
-//     email: string
-//     password: number
-// }
-
 const schema = yup.object({
     email: yup.string().email('Must be a valid email').required('Please enter your email address'),
     password: yup

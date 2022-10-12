@@ -6,16 +6,14 @@ import {useIndexedDB} from 'react-indexed-db';
 
 
 const Index = () => {
-    const { data: Users, isLoading, isSuccess } = useGetUsersQuery();
+    const { data:users, isLoading, isSuccess } = useGetUsersQuery();
     const navigate = useNavigate();
     const db = useIndexedDB('users');
 
     const loadToDb = () => {
-        Users?.forEach((user) => {
+        users?.forEach((user) => {
             db.add({ ...user }).then(
-                (event:number) => {
-                    // console.log('ID Generated: ', event);
-                },
+                (event:number) => {},
                 error => {
                     // console.log(error);
                 }
@@ -25,7 +23,6 @@ const Index = () => {
 
     useEffect(() => {
         loadToDb()
-        console.log(db)
     }, [isSuccess])
 
 
@@ -34,12 +31,10 @@ const Index = () => {
     return (
         <div>
             <h1>Users</h1>
+            {/*Todo: Fix filter bug*/}
             <Filter />
-            {/*{allUsers.map((user:any, index:number) => (*/}
-            {/*    <span key={index}>{user.user_name}</span>*/}
-            {/*))}*/}
             {isLoading && <h3>Loading...</h3>}
-            {Users?.map((user:any) => (
+            {users?.map((user:any) => (
                 <div key={user.id}>
                     <h1>{user.userName}</h1>
                     <p>{user.email}</p>

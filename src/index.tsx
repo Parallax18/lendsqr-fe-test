@@ -15,7 +15,6 @@ import Error404 from "components/Error404";
 import UserDetail from "routes/dashboard/users/user-detail";
 import {IndexedDBProps, initDB} from "react-indexed-db";
 import {IndexedDbConfig} from "services/indexedDb";
-// import {createDb} from "./services/indexedDb";
 
 const router = createBrowserRouter([
     {
@@ -41,9 +40,6 @@ const router = createBrowserRouter([
     }
 ])
 
-// export const indexedDb = globalThis.indexedDB
-//
-// export const openRequest = indexedDb.open('LendsqrUsersDatabase', 1);
 
 initDB(IndexedDbConfig as IndexedDBProps)
 
