@@ -25,35 +25,48 @@ export const sidebarData = [
         items: [
             {
                 text: 'Users',
-                icon: SidebarUserIcon
+                icon: SidebarUserIcon,
+                path: 'users'
             },
             {
                 text: 'Guarantors',
-                icon: GuarantorsIcon
+                icon: GuarantorsIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Loans',
-                icon: LoansIcon
+                icon: LoansIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Decision Models',
-                icon: DecisionModelsIcon
+                icon: DecisionModelsIcon,
+                path: '/dashboard'
+
             },
             {
                 text: 'Savings',
-                icon: SavingsIcon
+                icon: SavingsIcon,
+                path: '/dashboard'
+
             },
             {
                 text: 'Loan Requests',
-                icon: LoanRequestIcon
+                icon: LoanRequestIcon,
+                path: '/dashboard'
+
             },
             {
                 text: 'Whitelist',
-                icon: WhiteliistIcon
+                icon: WhiteliistIcon,
+                path: '/dashboard'
+
             },
             {
                 text: 'Karma',
-                icon: KarmaIcon
+                icon: KarmaIcon,
+                path: '/dashboard'
+
             }
         ]
     },
@@ -62,39 +75,49 @@ export const sidebarData = [
         items: [
             {
                 text: 'Organizaton',
-                icon: OrganizationIcon
+                icon: OrganizationIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Loan Products',
-                icon: LoanProductsIcon
+                icon: LoanProductsIcon,
+                path: '/dashboard'
+
             },
             {
                 text: 'Savings Products',
-                icon: SavingsProductsIcon
+                icon: SavingsProductsIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Fees and Charges',
-                icon: FeesChargesIcon
+                icon: FeesChargesIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Transactions',
-                icon: TransactionsIcon
+                icon: TransactionsIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Services',
-                icon: ServicesIcon
+                icon: ServicesIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Service Account',
-                icon: ServiceAccountIcon
+                icon: ServiceAccountIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Settlements',
-                icon: SettlementsIcon
+                icon: SettlementsIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Reports',
-                icon: ReportsIcon
+                icon: ReportsIcon,
+                path: '/dashboard'
             }
         ]
     },
@@ -103,15 +126,18 @@ export const sidebarData = [
         items: [
             {
                 text: 'Preferences',
-                icon: PrefrencesIcon
+                icon: PrefrencesIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Fees and Pricing',
-                icon: FeesPricingIcon
+                icon: FeesPricingIcon,
+                path: '/dashboard'
             },
             {
                 text: 'Audit Logs',
-                icon: AuditLogsIcon
+                icon: AuditLogsIcon,
+                path: '/dashboard'
             }
         ]
     }

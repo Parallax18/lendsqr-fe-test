@@ -23,7 +23,7 @@ const Sidebar = () => {
                     {data.items.map((i, idx) => (
                         <div key={idx} className={'sidebar__item'}>
                             <i.icon />
-                            <Link to={'/'} className={'sidebar__item__text'}>{i.text}</Link>
+                            <Link to={i.path} className={'sidebar__item__text'}>{i.text}</Link>
                         </div>
                     ))}
                 </div>
