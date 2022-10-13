@@ -1,0 +1,10 @@
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+
+    .usersummarcard {
+      width: 100%;
+      background: #000;
+      flex-direction: column;
+    }
+
+}

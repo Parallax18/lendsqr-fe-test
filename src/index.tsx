@@ -9,8 +9,8 @@ import {
     RouterProvider
 } from "react-router-dom";
 import Login from "routes/login/login";
-import Dashboard from "routes/dashboard";
-import Users from "routes/dashboard/users";
+import Dashboard from "routes/dashboard/Dashboard";
+import Users from "routes/dashboard/users/Users";
 import Error404 from "components/Error404";
 import UserDetail from "routes/dashboard/users/user-detail";
 import {IndexedDBProps, initDB} from "react-indexed-db";

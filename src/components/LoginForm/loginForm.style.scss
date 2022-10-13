@@ -1,3 +1,5 @@
+@import "styles/base.styles.scss";
+
 .input__group{
   margin: 2rem 0;
 
@@ -6,24 +8,21 @@
   }
 
   &--link{
-    color: #39CDCC;
-    font-family: "Avenir Next" sans-serif;
+    color: $button-primary-color;
+    font-family: "Avenir Next", sans-serif;
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 0.5px;
   }
 
   &--error-message{
-    color: #ff4141;
+    color: $error-text-color;
     margin-top: 0;
   }
 }
 
 .input__wrapper{
-  height: 50px;
-  border: 2px solid rgba(84, 95, 125, 0.15);
-  border-radius: 5px;
-  width: 27.9375rem;
+  @include base-input-style(27.9375rem);
 }
 
 .input__field{
@@ -33,10 +32,10 @@
   padding: 1rem;
   font-family: "Avenir", sans-serif;
   font-size: 0.875rem;
-  color: #545F7D;
+  color: $secondary-text-color;
 
   &::placeholder{
-    color: #545F7D;
+    color: $secondary-text-color;
   }
 
 

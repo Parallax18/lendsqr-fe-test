@@ -1,0 +1,28 @@
+@import "styles/base.styles.scss";
+
+.userdetailsection{
+  border-bottom: 2px solid rgba(33, 63, 125, 0.1);
+  padding: 2em 0;
+
+  &__header{
+    margin-bottom: 2rem;
+    @include body-text(1rem);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+  }
+}
+
+.details{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 2rem;
+}
+
+.detail__title{
+  @include body-text(12px);
+  margin-bottom: 10px;
+}
+
+.detail__info{
+  @include body-text(1rem)
+}

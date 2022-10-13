@@ -1,0 +1,96 @@
+@import "styles/base.styles.scss";
+
+.topbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 200;
+  height: max-content;
+  padding: 1rem;
+  box-shadow: 3px 0 20px rgba(0, 0, 0, 0.04);
+
+  &__left{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    width: 10rem;
+  }
+
+  &__searchfield{
+    border-radius: 8px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+    &__input{
+      @include base-input-style(87%);
+      height: 40px;
+      border-radius: 5px 0 0 5px;
+      border-right: 0;
+      padding: 1rem;
+      color: $secondary-text-color;
+
+      &::placeholder{
+        font-family: "Work Sans", sans-serif;
+        color: $secondary-text-color;
+      }
+    }
+
+    &__button{
+      background: $button-primary-color;
+      border: none;
+      outline: none;
+      height: 100%;
+      width: 13%;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+
+      &:hover{
+        background: $button-hover-color;
+      }
+    }
+
+  }
+}
+
+.topbar__right{
+    display: flex;
+    align-items: center;
+
+  &__docs__link{
+    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+    color: $primary-text-color;
+  }
+
+  & > * {
+    margin-right: 30px;
+  }
+
+  &__user{
+    display: flex;
+    align-items: center;
+
+    .username{
+      @include body-text(16px);
+      font-family: "Work Sans", sans-serif;
+    }
+  }
+
+  &__profileimg{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    clip-path: circle();
+    margin-right: 10px;
+  }
+}
+

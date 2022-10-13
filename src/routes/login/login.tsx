@@ -9,9 +9,8 @@ const Login = () => {
         <div className={'loginscreen'}>
             {/*Image*/}
             <div className={'loginscreen__imagearea'}>
-                <img className={"logo"} src={'/assets/images/lendsqr-logo.svg'}/>
-
-                <img className={'loginscreen__img'} src={'/assets/images/login-img.svg'}/>
+                <img alt={'lendsqr logo'} className={"logo"} src={'/assets/images/lendsqr-logo.svg'}/>
+                <img alt={'login illustration'} className={'loginscreen__img'} src={'/assets/images/login-img.svg'}/>
             </div>
             {/*Form*/}
             <div className={'loginscreen__formarea'}>

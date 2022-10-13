@@ -1,0 +1,53 @@
+@import "styles/base.styles.scss";
+
+.userdetail__headsection  {
+  &-link{
+    @include body-text(1rem);
+    margin-bottom: 2rem;
+
+    & > span{
+      margin-left: 10px;
+    }
+  }
+
+  & > * {
+    margin-bottom: 2rem;
+  }
+
+  &-buttons-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+
+    & > * {
+      margin: 0 10px;
+    }
+  }
+
+  &-button-blacklist{
+    @include base-button-style($border: 1px solid #E4033B, $color: #E4033B, $bg: #fff, $hover-bg: #fcf8f8);
+    font-weight: bold;
+    font-family: "Work Sans", sans-serif;
+  }
+  &-button-activate{
+    @include base-button-style($border: 1px solid #39CDCC, $color: #39CDCC, $bg: #fff, $hover-bg: #fcf8f8);
+    font-weight: bold;
+    font-family: "Work Sans", sans-serif;
+  }
+}
+
+.userdetail__headsection-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.userdetailbottomcard{
+  background: #fff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 2rem;
+}

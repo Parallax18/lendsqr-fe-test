@@ -1,0 +1,56 @@
+@import "styles/base.styles.scss";
+@import "userSummaryCard.style.mobile";
+
+@mixin icon-wrapper($bg){
+  background: $bg;
+  border-radius: 50%;
+  padding: 0.8rem;
+  clip-path: circle();
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.usersummarycard{
+  background: #fff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  height: 160px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 25%;
+  margin: 0 0.5rem;
+
+  & > *{
+    margin-bottom: 1rem;
+  }
+
+  &--icon-wrapper-users{
+    @include icon-wrapper(#FCE8FF)
+  }
+
+  &--icon-wrapper-activeusers{
+    @include icon-wrapper(#EEE8FF)
+  }
+
+  &--icon-wrapper-userswithloan{
+    @include icon-wrapper(#FEEFEC)
+  }
+
+  &--icon-wrapper-userswithsavings{
+    @include icon-wrapper(#FFEBF0)
+  }
+
+  &--label{
+    @include body-text(0.875rem);
+    font-weight: 500;
+  }
+
+  &--value{
+    @include large-text();
+  }
+}

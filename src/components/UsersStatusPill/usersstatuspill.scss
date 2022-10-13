@@ -1,0 +1,27 @@
+@import 'styles/base.styles.scss';
+
+.statuspill{
+    @include body-text(0.875rem);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+
+  &.pending{
+    background: #FDF7E5;
+    color: #E9B200;
+  }
+
+  &.inactive{
+    background: #F5F5F7;
+    color: $secondary-text-color;
+  }
+
+  &.blacklisted{
+    background: #FCE6EB;
+    color: #E4033B;
+  }
+
+  &.active{
+    background: #F3FCF6;
+    color: #39CD62;
+  }
+}

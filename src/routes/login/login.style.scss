@@ -1,16 +1,5 @@
 @import "login.style.mobile";
-
-@mixin heading-text($weight : bold){
-  color: #213F7D;
-  font-size: 2.5rem;
-  font-weight: $weight;
-}
-
-@mixin body-text($size: 1.25rem){
-  color: #545F7D;
-  font-size: $size;
-  font-weight: normal;
-}
+@import "styles/base.styles.scss";
 
 .logo{
   position: absolute;

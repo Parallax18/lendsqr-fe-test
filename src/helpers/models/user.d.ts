@@ -1,4 +1,4 @@
-interface IProfile {
+export interface IProfile {
     firstName: string,
     lastName: string,
     phoneNumber: string,
@@ -17,7 +17,7 @@ interface IGuarantor {
     address: string
 }
 
-interface IEducation {
+export interface IEducation {
     level: string,
     employmentStatus: string,
     sector: string,
@@ -51,3 +51,4 @@ export interface IUser {
     ids?: string,
     entities?: string
 }
+

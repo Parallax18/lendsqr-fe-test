@@ -25,7 +25,9 @@
       "routes/*": ["routes/*"],
       "app/*": ["app/*"],
       "components/*": ["components/*"],
-      "services/*": ["services/*"]
+      "services/*": ["services/*"],
+      "styles/*": ["styles/*"],
+      "helpers/*": ["helpers/*"]
     },
 
   },
