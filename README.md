@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Simple user management dashboard application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
@@ -38,6 +38,21 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Styling
+
+This application was styled completely with SASS.
+**Find styles for each component in the containing folder for that component
+
+## File structure
+#### Components : Found in the components folder
+#### Routes : Individual page screens are in this folder - Find nested routes within nested folders
+#### Styles : Component stylesheets are found within the particular component folder
+#### Global styles and base styling : Found in the 'styles' folder in root
+#### Helpers : This folder contains helper files and type model folders
+#### Services : IndexedDb Database service.
+#### App : Redux store and hook files are here
+#### Features : Redux slices are here
 
 ## Learn More
 
