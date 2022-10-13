@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import * as yup from "yup";
 import {useAppDispatch} from "app/hooks";
 import {authenticateUser} from "features/api/authSlice";
-import {IAppUser} from "../../helpers/models/app-user";
+import {IAppUser} from "helpers/models/app-user";
 import Button from "components/Button/Button";
 import './loginForm.style.scss'
 
@@ -40,7 +40,7 @@ const LoginForm = () => {
 
                 <div className={'input__wrapper'}>
                     <input className={'input__field'} {...register("password")} type={'password'} placeholder={'Password'} />
-                    <button>show</button>
+                    {/*<button>show</button>*/}
                 </div>
                 <p className={'input__group--error-message'}>{errors.password?.message}</p>
 
