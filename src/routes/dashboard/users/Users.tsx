@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useGetUsersQuery} from "features/api/userSlice";
-import {useNavigate} from "react-router-dom"
 import {useIndexedDB} from 'react-indexed-db';
 import UserSummaryCard from "components/UserSummaryCard/UserSummaryCard";
 import './users.style.scss'
@@ -11,21 +10,28 @@ import UsersWithSavingsIcon from "styles/icons/UsersWithSavingsIcon";
 import UsersTable from "components/UsersTable/UsersTable";
 import moment from "moment";
 import {IUser} from "helpers/models/user";
+import {useAppDispatch, useAppSelector} from "app/hooks";
+import {updateUsersDataTableView} from "features/data/usersTableDataSlice";
 
 
 const Users = () => {
     const { data:users, isLoading, isSuccess } = useGetUsersQuery();
     const db = useIndexedDB('users');
-    const [userData, setUserData] = useState([] as IUser[])
-
+    // const [userData, setUserData] = useState([] as IUser[]);
+    const dispatch = useAppDispatch()
+    const userData = useAppSelector((state) => state.userTable);
 
 
     const loadToDb = () => {
         users?.forEach((user) => {
             const createdAt = moment(user.createdAt).format('MMM Do YYYY, h:mm a')
-            db.add({ ...user, createdAt }).then(
-                (event:number) => {},
-                error => {}
+            db.add({ ...user, createdAt, status: 'Pending' }).then(
+                (event:number) => {
+                    console.log(event)
+                },
+                error => {
+                    console.log(error)
+                }
             );
         })
     }
@@ -57,7 +63,9 @@ const Users = () => {
     useEffect(() => {
         loadToDb()
         db.getAll().then((personsFromDB:IUser[]) => {
-            setUserData(personsFromDB);
+        isSuccess && dispatch(updateUsersDataTableView(users))
+            // setUserData(personsFromDB);
+            console.log(personsFromDB)
         });
     }, [isSuccess])
 
@@ -72,18 +80,8 @@ const Users = () => {
                 {usersSummaryData.map((summary, idx) => <UserSummaryCard key={idx} title={summary.title} value={summary.value} icon={summary.icon}/> ) }
             </div>
 
-
-            {/*Todo: Fix filter bug*/}
-            {/*<Filter />*/}
             {isLoading && <h3>Loading...</h3>}
-            {isSuccess && <UsersTable users={userData!}  />}
-            {/*{users?.map((user:any) => (*/}
-            {/*    <div key={user.id}>*/}
-            {/*        <h1>{user.userName}</h1>*/}
-            {/*        <p>{user.email}</p>*/}
-            {/*        <button onClick={() => navigate(`users/${user.id}`)}>View</button>*/}
-            {/*    </div>*/}
-            {/*))}*/}
+            {isSuccess && <UsersTable users={userData.tableData!}   />}
         </div>
     );
 };

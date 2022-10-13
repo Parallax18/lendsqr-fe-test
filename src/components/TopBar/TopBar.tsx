@@ -4,8 +4,11 @@ import {Link} from "react-router-dom";
 import './topbar.style.scss'
 import NotificationBellIcon from "styles/icons/NotificationBellIcon";
 import DropdownIcon from "styles/icons/DropdownIcon";
+import {useAppDispatch} from "app/hooks";
+import {toggleSidebar} from "features/ui/uiSlice";
 
 const TopBar = () => {
+    const dispatch = useAppDispatch();
     return (
         <nav className={'topbar'}>
 
@@ -25,7 +28,7 @@ const TopBar = () => {
             <div className={'topbar__right'}>
                 <Link className={'topbar__right__docs__link'} to={'#'}>Docs</Link>
                 <NotificationBellIcon />
-                <div className={'topbar__right__user'}>
+                <div onClick={()=> dispatch(toggleSidebar())} className={'topbar__right__user'}>
                     <img alt={'profile picture'} className={'topbar__right__profileimg'} src={'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'} />
                     <p className={'username'}>Adedeji</p>
                     <DropdownIcon />

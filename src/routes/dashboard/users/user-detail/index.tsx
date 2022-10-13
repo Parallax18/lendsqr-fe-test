@@ -6,6 +6,7 @@ import './userdetail.style.scss'
 import UserDetailsTopCard from "components/UserDetailsTopCard/UserDetailsTopCard";
 import UserDetailSection from "components/UserDetailSection/UserDetailSection";
 
+
 const Index = () => {
     const { id } = useParams()
     const { data: User, isLoading, isSuccess } = useGetSingleUserQuery(id!);
@@ -37,6 +38,13 @@ const Index = () => {
         guarantorPhone: '',
         guarantorGender: ''
     });
+
+
+    const blacklistUser = (action:string) => {
+        // @ts-ignore
+        setUserData({...userData, status: action})
+        console.log(userData)
+    }
 
     useEffect(() => {
         //@ts-ignore
@@ -73,12 +81,11 @@ const Index = () => {
                 accountBalance
             })
         }
-        console.log(User)
-
-      }, [isSuccess])
-
+        // console.log(User)
+        console.log(userData)
 
 
+    }, [isSuccess,])
 
      const personalInformationData = [
         {
@@ -193,7 +200,7 @@ const Index = () => {
                     <h1 className={'users__header'}>User Details</h1>
 
                     <div className={'userdetail__headsection-buttons-wrapper'}>
-                        <button className={'userdetail__headsection-button-blacklist'}>BLACKLIST USER</button>
+                        <button onClick={() => blacklistUser('Blocked')} className={'userdetail__headsection-button-blacklist'}>BLACKLIST USER</button>
                         <button className={'userdetail__headsection-button-activate'}>ACTIVATE USER</button>
                     </div>
                 </div>

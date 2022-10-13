@@ -41,7 +41,7 @@ const router = createBrowserRouter([
 ])
 
 
-initDB(IndexedDbConfig as IndexedDBProps)
+initDB(IndexedDbConfig as unknown as IndexedDBProps)
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

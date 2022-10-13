@@ -94,3 +94,22 @@
   }
 }
 
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+  .topbar{
+    width: 100vw;
+
+    &__logo{
+      width: 7rem;
+    }
+
+    &__searchfield{
+      display: none;
+    }
+  }
+
+  .topbar__right__docs__link{
+    display: none;
+  }
+}
+

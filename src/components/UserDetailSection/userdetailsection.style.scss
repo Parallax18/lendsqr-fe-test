@@ -24,5 +24,15 @@
 }
 
 .detail__info{
-  @include body-text(1rem)
+  @include body-text(1rem);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+  .details{
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+  }
 }

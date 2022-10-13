@@ -11,7 +11,7 @@ export const IndexedDbConfig = {
                 { name: "email", keypath: ["email"], options: {unique: true} },
                 { name: "date", keypath: ["createdAt"], options: {unique: false} },
                 { name: "phone", keypath: ["phoneNumber"], options: {unique: true} },
-                { name: "status", keypath: "status", options: {unique: false} },
+                { name: "status", keypath: ["status"], options: {unique: false} },
                 { name: "organization_status", keypath: ["orgName", "status"], options: {unique: false} },
                 { name: "organization_date", keypath: ["orgName", "createdAt"], options: {unique: false} },
                 { name: "organization_date_status", keypath: ["orgName", "createdAt", "status"], options: {unique: false} },

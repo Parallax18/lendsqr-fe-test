@@ -1,20 +1,22 @@
 import React from 'react';
-import {Link, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Sidebar from "components/Sidebar/Sidebar";
 import './dashboard.style.scss'
 import TopBar from "components/TopBar/TopBar";
+import {useAppSelector} from "app/hooks";
 
 const Dashboard = () => {
+    const uiState = useAppSelector(state => state.ui)
     return (
         <div>
-            <TopBar />
+            <TopBar/>
             <main className={'dashboard__wrapper'}>
-                <Sidebar />
+                { uiState.sidebarOpen &&  <Sidebar /> }
                 <section className={'dashboard__outlet'}>
                     <Outlet />
                 </section>
-                <Link to={'/'}>Logout</Link>
-                <Link to={'users'}>Users</Link>
+                {/*<Link to={'/'}>Logout</Link>*/}
+                {/*<Link to={'users'}>Users</Link>*/}
             </main>
         </div>
     );

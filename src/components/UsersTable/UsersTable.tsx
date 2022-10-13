@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {IUser} from "helpers/models/user";
 import UsersTableItem from "components/UsersTableItem/UsersTableItem";
 import './userstable.scss'
 import FilterIcon from "styles/icons/FilterIcon";
+import Filter from "components/Filter/Filter";
 
 interface IUsersTableProps {
     users: IUser[]
@@ -11,11 +12,14 @@ interface IUsersTableProps {
 const tableHeadData = ['oraginzation', 'username', 'email', 'phone number', 'date joined', 'status']
 
 const UsersTable = ({users}:IUsersTableProps) => {
+    console.log("Check", {users})
+    const [toggleModal, setToggleModal] = useState(false);
     return (
         <main className={'table'}>
+            { toggleModal && <Filter /> }
             <div className={'table__head'}>
                 {tableHeadData.map((item, idx) => (
-                    <div key={idx} className={'table__head__item'}>
+                    <div onClick={() => setToggleModal(!toggleModal)} key={idx} className={'table__head__item'}>
                         <p>{item.toUpperCase()}</p>
                         <FilterIcon />
                     </div>

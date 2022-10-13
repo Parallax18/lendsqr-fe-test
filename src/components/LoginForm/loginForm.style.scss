@@ -37,6 +37,11 @@
   &::placeholder{
     color: $secondary-text-color;
   }
+}
 
-
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+  .input__wrapper{
+    width: 90vw;
+  }
 }

@@ -1,5 +1,4 @@
 @import "styles/base.styles.scss";
-@import "userSummaryCard.style.mobile";
 
 @mixin icon-wrapper($bg){
   background: $bg;
@@ -53,4 +52,14 @@
   &--value{
     @include large-text();
   }
+}
+
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+
+  .usersummarycard {
+    width: 100%;
+    margin-bottom: 1rem ;
+  }
+
 }

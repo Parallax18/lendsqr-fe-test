@@ -19,6 +19,12 @@
   &__details{
     display: flex;
     align-items: center;
+
+    &-mobile{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__img{
@@ -44,6 +50,7 @@
     border-left: 2px solid rgba(84, 95, 125, 0.15);
     border-right: 2px solid rgba(84, 95, 125, 0.15);
     padding: 1.5rem 1rem;
+    margin-right: 1rem;
 
     p{
       @include  body-text(14px)
@@ -56,8 +63,23 @@
     font-size: 22px;
   }
 
-  .bankdetails{
+  .accountdetails__bank{
       @include body-text(12px);
       font-family: "Work Sans", sans-serif;
   }
 }
+
+
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+  .profile{
+    flex-direction: column;
+  }
+
+
+  .accountdetails{
+    display: inline-block;
+  }
+
+}
+

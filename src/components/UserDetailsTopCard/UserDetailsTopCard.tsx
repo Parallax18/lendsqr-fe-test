@@ -24,18 +24,20 @@ const UserDetailsTopCard = ({firstname, lastname, accountbalance, accountnumber,
                     </div>
                 </div>
 
-                <div className={'usertier'}>
-                    <p>User's tier</p>
-                    <div>
-                        <FilledStarIcon />
-                        <EmptyStarIcon />
-                        <EmptyStarIcon />
+                <div className={'profile__details-mobile'}>
+                    <div className={'usertier'}>
+                        <p>User's tier</p>
+                        <div>
+                            <FilledStarIcon />
+                            <EmptyStarIcon />
+                            <EmptyStarIcon />
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <p className={'balance'}>&#8358; {accountbalance}</p>
-                    <p className={'bankdetails'}>{bvn}/Providus Bank</p>
+                    <div className={'accountdetails'}>
+                        <p className={'balance'}>&#8358; {accountbalance}</p>
+                        <p className={'accountdetails__bank'}>{bvn}/Providus Bank</p>
+                    </div>
                 </div>
             </div>
         </main>

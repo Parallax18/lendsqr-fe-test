@@ -1,0 +1,36 @@
+@import "styles/base.styles.scss";
+
+.filtermodal{
+  background: #FFFFFF;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 1rem;
+  position: absolute;
+  z-index: 200;
+  top: 10%;
+  width: 16.875rem;
+
+  &__input-wrapper{
+    margin-bottom: 1rem;
+  }
+
+  &__input-label{
+    display: block;
+    @include body-text(1rem);
+    margin-bottom: 7px;
+  }
+
+  &__input{
+    @include base-input-style(100%);
+    padding: 1rem;
+  }
+}
+
+.buttongroup{
+  display: flex;
+
+  & > * {
+    margin: 0 0.5rem;
+  }
+}

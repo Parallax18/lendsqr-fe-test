@@ -1,6 +1,7 @@
 import React from 'react';
 import {sidebarData} from "./sidebarData";
-import './sidebar.style.scss'
+import './sidebar.style.scss';
+import './sidebar.style.mobile.scss'
 import {Link} from "react-router-dom";
 import BriefCaseIcon from "styles/icons/BriefCaseIcon";
 import HomeIcon from "styles/icons/HomeIcon";

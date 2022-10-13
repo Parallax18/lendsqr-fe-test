@@ -1,0 +1,7 @@
+$breakpoint-mobile: 495px;
+@media (max-width: $breakpoint-mobile) {
+  .sidebar{
+    //right: ;
+    width: 100vw;
+  }
+}
