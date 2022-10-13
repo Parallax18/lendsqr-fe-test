@@ -54,8 +54,13 @@ This application was styled completely with SASS.
 #### App : Redux store and hook files are here
 #### Features : Redux slices are here
 
+## Data storage
+
+Data is gotten from an api with [Redux toolkit query](https://redux-toolkit.js.org/rtk-query/overview) and stored on the client indexedDb.
+Sate is managed with [Redux toolkit](https://redux-toolkit.js.org/),
+
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Live version](https://joshua-okechukwu-lendsqr-fe-test.vercel.app/).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
