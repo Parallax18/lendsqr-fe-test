@@ -7,6 +7,7 @@ import {authenticateUser} from "features/api/authSlice";
 import {IAppUser} from "helpers/models/app-user";
 import Button from "components/Button/Button";
 import './loginForm.style.scss'
+import React from "react";
 
 const schema = yup.object({
     email: yup.string().email('Must be a valid email').required('Please enter your email address'),
@@ -32,6 +33,10 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+            <div className={'loginscreen__headingwrapper'} >
+                <h1 className={'loginscreen__header'}>Welcome!</h1>
+                <p className={'loginscreen__subheader'}>Enter details to login.</p>
+            </div>
             <div className={'input__group'}>
                 <div className={'input__wrapper'}>
                     <input className={'input__field'}  {...register("email")} type={'email'} placeholder={'Email'} />

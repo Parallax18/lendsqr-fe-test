@@ -27,10 +27,10 @@ const Users = () => {
             const createdAt = moment(user.createdAt).format('MMM Do YYYY, h:mm a')
             db.add({ ...user, createdAt, status: 'Pending' }).then(
                 (event:number) => {
-                    console.log(event)
+                    // console.log(event)
                 },
                 error => {
-                    console.log(error)
+                    // console.log(error)
                 }
             );
         })
@@ -65,7 +65,7 @@ const Users = () => {
         db.getAll().then((personsFromDB:IUser[]) => {
         isSuccess && dispatch(updateUsersDataTableView(users))
             // setUserData(personsFromDB);
-            console.log(personsFromDB)
+            // console.log(personsFromDB)
         });
     }, [isSuccess])
 
