@@ -154,15 +154,15 @@ const Index = () => {
     const socialData = [
         {
             title: 'facebook',
-            info: userData.facebook
+            info: `@${userData.firstName}`
         },
         {
             title: 'instagram',
-            info: userData.instagram
+            info:`@${userData.firstName}`
         },
         {
             title: 'twitter',
-            info: userData.twitter
+            info:`@${userData.firstName}`
         }
     ]
     const guarantorData = [
